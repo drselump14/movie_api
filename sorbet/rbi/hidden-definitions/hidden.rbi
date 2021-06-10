@@ -799,15 +799,6 @@ end
 module Backport::Server
 end
 
-class BaseConfig
-end
-
-class BaseConfig
-  def self.method_missing(method, *args, &block); end
-
-  def self.respond_to_missing?(name, include_private=T.unsafe(nil)); end
-end
-
 BasicObject::BasicObject = BasicObject
 
 module BetterErrors
@@ -3678,6 +3669,224 @@ class Capybara::Config
   extend ::Forwardable
 end
 
+module Capybara::DSL
+  def accept_alert(*_, &_1); end
+
+  def accept_confirm(*_, &_1); end
+
+  def accept_prompt(*_, &_1); end
+
+  def all(*_, &_1); end
+
+  def assert_all_of_selectors(*_, &_1); end
+
+  def assert_any_of_selectors(*_, &_1); end
+
+  def assert_current_path(*_, &_1); end
+
+  def assert_no_current_path(*_, &_1); end
+
+  def assert_no_selector(*_, &_1); end
+
+  def assert_no_text(*_, &_1); end
+
+  def assert_no_title(*_, &_1); end
+
+  def assert_none_of_selectors(*_, &_1); end
+
+  def assert_selector(*_, &_1); end
+
+  def assert_text(*_, &_1); end
+
+  def assert_title(*_, &_1); end
+
+  def attach_file(*_, &_1); end
+
+  def body(*_, &_1); end
+
+  def check(*_, &_1); end
+
+  def choose(*_, &_1); end
+
+  def click_button(*_, &_1); end
+
+  def click_link(*_, &_1); end
+
+  def click_link_or_button(*_, &_1); end
+
+  def click_on(*_, &_1); end
+
+  def current_host(*_, &_1); end
+
+  def current_path(*_, &_1); end
+
+  def current_scope(*_, &_1); end
+
+  def current_url(*_, &_1); end
+
+  def current_window(*_, &_1); end
+
+  def dismiss_confirm(*_, &_1); end
+
+  def dismiss_prompt(*_, &_1); end
+
+  def evaluate_script(*_, &_1); end
+
+  def execute_script(*_, &_1); end
+
+  def fill_in(*_, &_1); end
+
+  def find(*_, &_1); end
+
+  def find_all(*_, &_1); end
+
+  def find_button(*_, &_1); end
+
+  def find_by_id(*_, &_1); end
+
+  def find_field(*_, &_1); end
+
+  def find_link(*_, &_1); end
+
+  def first(*_, &_1); end
+
+  def go_back(*_, &_1); end
+
+  def go_forward(*_, &_1); end
+
+  def has_button?(*_, &_1); end
+
+  def has_checked_field?(*_, &_1); end
+
+  def has_content?(*_, &_1); end
+
+  def has_css?(*_, &_1); end
+
+  def has_current_path?(*_, &_1); end
+
+  def has_field?(*_, &_1); end
+
+  def has_link?(*_, &_1); end
+
+  def has_no_button?(*_, &_1); end
+
+  def has_no_checked_field?(*_, &_1); end
+
+  def has_no_content?(*_, &_1); end
+
+  def has_no_css?(*_, &_1); end
+
+  def has_no_current_path?(*_, &_1); end
+
+  def has_no_field?(*_, &_1); end
+
+  def has_no_link?(*_, &_1); end
+
+  def has_no_select?(*_, &_1); end
+
+  def has_no_selector?(*_, &_1); end
+
+  def has_no_table?(*_, &_1); end
+
+  def has_no_text?(*_, &_1); end
+
+  def has_no_title?(*_, &_1); end
+
+  def has_no_unchecked_field?(*_, &_1); end
+
+  def has_no_xpath?(*_, &_1); end
+
+  def has_select?(*_, &_1); end
+
+  def has_selector?(*_, &_1); end
+
+  def has_table?(*_, &_1); end
+
+  def has_text?(*_, &_1); end
+
+  def has_title?(*_, &_1); end
+
+  def has_unchecked_field?(*_, &_1); end
+
+  def has_xpath?(*_, &_1); end
+
+  def html(*_, &_1); end
+
+  def open_new_window(*_, &_1); end
+
+  def page(); end
+
+  def query(*_, &_1); end
+
+  def refresh(*_, &_1); end
+
+  def refute_selector(*_, &_1); end
+
+  def reset_session!(*_, &_1); end
+
+  def response_headers(*_, &_1); end
+
+  def save_and_open_page(*_, &_1); end
+
+  def save_and_open_screenshot(*_, &_1); end
+
+  def save_page(*_, &_1); end
+
+  def save_screenshot(*_, &_1); end
+
+  def scroll_by(*_, &_1); end
+
+  def scroll_to(*_, &_1); end
+
+  def select(*_, &_1); end
+
+  def send_keys(*_, &_1); end
+
+  def source(*_, &_1); end
+
+  def status_code(*_, &_1); end
+
+  def switch_to_frame(*_, &_1); end
+
+  def switch_to_window(*_, &_1); end
+
+  def text(*_, &_1); end
+
+  def title(*_, &_1); end
+
+  def uncheck(*_, &_1); end
+
+  def unselect(*_, &_1); end
+
+  def using_session(name_or_session, &block); end
+
+  def using_wait_time(seconds, &block); end
+
+  def visit(*_, &_1); end
+
+  def window_opened_by(*_, &_1); end
+
+  def windows(*_, &_1); end
+
+  def within(*_, &_1); end
+
+  def within_element(*_, &_1); end
+
+  def within_fieldset(*_, &_1); end
+
+  def within_frame(*_, &_1); end
+
+  def within_table(*_, &_1); end
+
+  def within_window(*_, &_1); end
+end
+
+module Capybara::DSL
+  def self.extended(base); end
+
+  def self.included(base); end
+end
+
 module Capybara::Driver
 end
 
@@ -5730,6 +5939,7 @@ class Capybara::WindowError
 end
 
 module Capybara
+  extend ::Capybara::DSL
   def self.HTML(html); end
 
   def self.add_selector(name, **options, &block); end
@@ -5899,8 +6109,6 @@ module Capybara
   def self.use_default_driver(); end
 
   def self.using_driver(driver); end
-
-  def self.using_session(name_or_session, &block); end
 
   def self.using_wait_time(seconds); end
 
@@ -6475,11 +6683,6 @@ DRbIdConv = DRb::DRbIdConv
 DRbObject = DRb::DRbObject
 
 DRbUndumped = DRb::DRbUndumped
-
-class DatabaseConfig
-  extend ::T::Private::Methods::MethodHooks
-  extend ::T::Private::Methods::SingletonMethodHooks
-end
 
 class Date
   include ::DateAndTime::Zones
@@ -8212,6 +8415,17 @@ module Hanami::Assets
   VERSION = ::T.let(nil, ::T.untyped)
 end
 
+class Hanami::Assets::Asset
+  PUBLIC_DIRECTORY = ::T.let(nil, ::T.untyped)
+  URL_SEPARATOR = ::T.let(nil, ::T.untyped)
+end
+
+class Hanami::Assets::Compiler
+  COMPILE_PATTERN = ::T.let(nil, ::T.untyped)
+  DEFAULT_PERMISSIONS = ::T.let(nil, ::T.untyped)
+  EXTENSIONS = ::T.let(nil, ::T.untyped)
+end
+
 class Hanami::Assets::Config::Manifest
   SUBRESOURCE_INTEGRITY = ::T.let(nil, ::T.untyped)
   TARGET = ::T.let(nil, ::T.untyped)
@@ -8251,6 +8465,10 @@ module Hanami::Assets::Helpers
   STYLESHEET_MIME_TYPE = ::T.let(nil, ::T.untyped)
   STYLESHEET_REL = ::T.let(nil, ::T.untyped)
   WILDCARD_EXT = ::T.let(nil, ::T.untyped)
+end
+
+class Hanami::Assets::Static
+  PATH_INFO = ::T.let(nil, ::T.untyped)
 end
 
 class Hanami::CommonLogger
@@ -8587,6 +8805,17 @@ end
 
 class Hanami::Routing::Resource::Nested
   SEPARATOR = ::T.let(nil, ::T.untyped)
+end
+
+class Hanami::Routing::Route
+  include ::HttpRouter::RouteHelper
+  include ::HttpRouter::GenerationHelper
+end
+
+class Hanami::Static
+  HEADER_RULES = ::T.let(nil, ::T.untyped)
+  MAX_AGE = ::T.let(nil, ::T.untyped)
+  URL_PREFIX = ::T.let(nil, ::T.untyped)
 end
 
 module Hanami::Utils
@@ -10281,9 +10510,6 @@ class Kramdown::Converter::Kramdown
   TYPOGRAPHIC_SYMS = ::T.let(nil, ::T.untyped)
 end
 
-class Kramdown::Converter::Kramdown
-end
-
 class Kramdown::Converter::Latex
   def attribute_list(el); end
 
@@ -10407,6 +10633,10 @@ class Kramdown::Converter::Toc
 end
 
 class Kramdown::Converter::Toc
+end
+
+module Kramdown::Converter
+  extend ::Kramdown::Utils::Configurable
 end
 
 class Kramdown::Element
@@ -11222,8 +11452,6 @@ class MiniMime::Info
   BINARY_ENCODINGS = ::T.let(nil, ::T.untyped)
 end
 
-MiniTest = Minitest
-
 module Minitest
   ENCS = ::T.let(nil, ::T.untyped)
   VERSION = ::T.let(nil, ::T.untyped)
@@ -11243,6 +11471,7 @@ class Minitest::Runnable
 end
 
 class Minitest::Spec
+  include ::Capybara::DSL
   TYPES = ::T.let(nil, ::T.untyped)
 end
 
@@ -14086,109 +14315,6 @@ end
 
 class Parallel::UserInterruptHandler
   INTERRUPT_SIGNAL = ::T.let(nil, ::T.untyped)
-end
-
-class Parlour::ConflictResolver
-  extend ::T::Private::Methods::MethodHooks
-  extend ::T::Private::Methods::SingletonMethodHooks
-end
-
-class Parlour::Conversion::Converter
-  extend ::T::Private::Abstract::Hooks
-  extend ::T::InterfaceWrapper::Helpers
-  extend ::T::Private::Methods::MethodHooks
-  extend ::T::Private::Methods::SingletonMethodHooks
-end
-
-module Parlour::Debugging::Tree
-  extend ::T::Private::Methods::MethodHooks
-  extend ::T::Private::Methods::SingletonMethodHooks
-end
-
-module Parlour::Debugging
-  extend ::T::Private::Methods::MethodHooks
-  extend ::T::Private::Methods::SingletonMethodHooks
-end
-
-class Parlour::Generator
-  extend ::T::Private::Methods::MethodHooks
-  extend ::T::Private::Methods::SingletonMethodHooks
-end
-
-class Parlour::Options
-  extend ::T::Private::Methods::MethodHooks
-  extend ::T::Private::Methods::SingletonMethodHooks
-end
-
-class Parlour::ParseError
-  extend ::T::Private::Methods::MethodHooks
-  extend ::T::Private::Methods::SingletonMethodHooks
-end
-
-class Parlour::Plugin
-  extend ::T::Private::Abstract::Hooks
-  extend ::T::InterfaceWrapper::Helpers
-  extend ::T::Private::Methods::MethodHooks
-  extend ::T::Private::Methods::SingletonMethodHooks
-end
-
-class Parlour::RbiGenerator::Parameter
-  extend ::T::Private::Methods::MethodHooks
-  extend ::T::Private::Methods::SingletonMethodHooks
-end
-
-class Parlour::RbiGenerator::StructProp
-  extend ::T::Private::Methods::MethodHooks
-  extend ::T::Private::Methods::SingletonMethodHooks
-end
-
-class Parlour::RbsGenerator::Block
-  extend ::T::Private::Methods::MethodHooks
-  extend ::T::Private::Methods::SingletonMethodHooks
-end
-
-class Parlour::RbsGenerator::MethodSignature
-  extend ::T::Private::Methods::MethodHooks
-  extend ::T::Private::Methods::SingletonMethodHooks
-end
-
-class Parlour::RbsGenerator::Parameter
-  extend ::T::Private::Methods::MethodHooks
-  extend ::T::Private::Methods::SingletonMethodHooks
-end
-
-module Parlour::TypeLoader
-  extend ::T::Private::Methods::MethodHooks
-  extend ::T::Private::Methods::SingletonMethodHooks
-end
-
-class Parlour::TypeParser::NodePath
-  extend ::T::Private::Methods::MethodHooks
-  extend ::T::Private::Methods::SingletonMethodHooks
-end
-
-class Parlour::TypeParser
-  extend ::T::Private::Methods::MethodHooks
-  extend ::T::Private::Methods::SingletonMethodHooks
-end
-
-class Parlour::TypedObject
-  extend ::T::Private::Abstract::Hooks
-  extend ::T::InterfaceWrapper::Helpers
-  extend ::T::Private::Methods::MethodHooks
-  extend ::T::Private::Methods::SingletonMethodHooks
-end
-
-class Parlour::Types::Proc::Parameter
-  extend ::T::Private::Methods::MethodHooks
-  extend ::T::Private::Methods::SingletonMethodHooks
-end
-
-class Parlour::Types::Type
-  extend ::T::Private::Abstract::Hooks
-  extend ::T::InterfaceWrapper::Helpers
-  extend ::T::Private::Methods::MethodHooks
-  extend ::T::Private::Methods::SingletonMethodHooks
 end
 
 ParseError = Racc::ParseError
@@ -24944,22 +25070,12 @@ module Spoom
   VERSION = ::T.let(nil, ::T.untyped)
 end
 
-class Spoom::Cli::Bump
-  extend ::T::Private::Methods::MethodHooks
-  extend ::T::Private::Methods::SingletonMethodHooks
-end
-
 class Spoom::Cli::Coverage
   DATA_DIR = ::T.let(nil, ::T.untyped)
 end
 
 module Spoom::Cli::Helper
   HIGHLIGHT_COLOR = ::T.let(nil, ::T.untyped)
-end
-
-module Spoom::Cli::Helper
-  extend ::T::Private::Methods::MethodHooks
-  extend ::T::Private::Methods::SingletonMethodHooks
 end
 
 class Spoom::Cli::Run
@@ -24985,18 +25101,6 @@ module Spoom::Coverage::D3
   COLOR_TRUE = ::T.let(nil, ::T.untyped)
 end
 
-class Spoom::Coverage::D3::Base
-  extend ::T::Private::Abstract::Hooks
-  extend ::T::InterfaceWrapper::Helpers
-  extend ::T::Private::Methods::MethodHooks
-  extend ::T::Private::Methods::SingletonMethodHooks
-end
-
-module Spoom::Coverage::D3
-  extend ::T::Private::Methods::MethodHooks
-  extend ::T::Private::Methods::SingletonMethodHooks
-end
-
 class Spoom::Coverage::Page
   TEMPLATE = ::T.let(nil, ::T.untyped)
 end
@@ -25005,89 +25109,8 @@ class Spoom::Coverage::Snapshot
   STRICTNESSES = ::T.let(nil, ::T.untyped)
 end
 
-class Spoom::Coverage::Snapshot
-  extend ::T::Private::Methods::MethodHooks
-  extend ::T::Private::Methods::SingletonMethodHooks
-end
-
-class Spoom::Coverage::Template
-  extend ::T::Private::Abstract::Hooks
-  extend ::T::InterfaceWrapper::Helpers
-  extend ::T::Private::Methods::MethodHooks
-  extend ::T::Private::Methods::SingletonMethodHooks
-end
-
-module Spoom::Coverage
-  extend ::T::Private::Methods::MethodHooks
-  extend ::T::Private::Methods::SingletonMethodHooks
-end
-
-class Spoom::FileTree::Node
-  extend ::T::Private::Methods::MethodHooks
-  extend ::T::Private::Methods::SingletonMethodHooks
-end
-
-class Spoom::FileTree
-  extend ::T::Private::Methods::MethodHooks
-  extend ::T::Private::Methods::SingletonMethodHooks
-end
-
-module Spoom::Git
-  extend ::T::Private::Methods::MethodHooks
-  extend ::T::Private::Methods::SingletonMethodHooks
-end
-
-class Spoom::LSP::Diagnostic
-  extend ::T::Private::Methods::MethodHooks
-  extend ::T::Private::Methods::SingletonMethodHooks
-end
-
 class Spoom::LSP::DocumentSymbol
   SYMBOL_KINDS = ::T.let(nil, ::T.untyped)
-end
-
-class Spoom::LSP::DocumentSymbol
-  extend ::T::Private::Methods::MethodHooks
-  extend ::T::Private::Methods::SingletonMethodHooks
-end
-
-class Spoom::LSP::Hover
-  extend ::T::Private::Methods::MethodHooks
-  extend ::T::Private::Methods::SingletonMethodHooks
-end
-
-class Spoom::LSP::Location
-  extend ::T::Private::Methods::MethodHooks
-  extend ::T::Private::Methods::SingletonMethodHooks
-end
-
-class Spoom::LSP::Position
-  extend ::T::Private::Methods::MethodHooks
-  extend ::T::Private::Methods::SingletonMethodHooks
-end
-
-module Spoom::LSP::PrintableSymbol
-  extend ::T::Private::Abstract::Hooks
-  extend ::T::InterfaceWrapper::Helpers
-  extend ::T::Private::Methods::MethodHooks
-  extend ::T::Private::Methods::SingletonMethodHooks
-end
-
-class Spoom::LSP::Range
-  extend ::T::Private::Methods::MethodHooks
-  extend ::T::Private::Methods::SingletonMethodHooks
-end
-
-class Spoom::LSP::SignatureHelp
-  extend ::T::Private::Methods::MethodHooks
-  extend ::T::Private::Methods::SingletonMethodHooks
-end
-
-class Spoom::Printer
-  extend ::T::Private::Abstract::Hooks
-  extend ::T::InterfaceWrapper::Helpers
-  extend ::T::Private::Methods::MethodHooks
-  extend ::T::Private::Methods::SingletonMethodHooks
 end
 
 module Spoom::Sorbet
@@ -25096,38 +25119,13 @@ module Spoom::Sorbet
   GEM_PATH = ::T.let(nil, ::T.untyped)
 end
 
-class Spoom::Sorbet::Config
-  extend ::T::Private::Methods::MethodHooks
-  extend ::T::Private::Methods::SingletonMethodHooks
-end
-
-class Spoom::Sorbet::Errors::Error
-  extend ::T::Private::Methods::MethodHooks
-  extend ::T::Private::Methods::SingletonMethodHooks
-end
-
 class Spoom::Sorbet::Errors::Parser
   ERROR_LINE_MATCH_REGEX = ::T.let(nil, ::T.untyped)
   HEADER = ::T.let(nil, ::T.untyped)
 end
 
-class Spoom::Sorbet::Errors::Parser
-  extend ::T::Private::Methods::MethodHooks
-  extend ::T::Private::Methods::SingletonMethodHooks
-end
-
-module Spoom::Sorbet::Errors
-  extend ::T::Private::Methods::MethodHooks
-  extend ::T::Private::Methods::SingletonMethodHooks
-end
-
 module Spoom::Sorbet::MetricsParser
   DEFAULT_PREFIX = ::T.let(nil, ::T.untyped)
-end
-
-module Spoom::Sorbet::MetricsParser
-  extend ::T::Private::Methods::MethodHooks
-  extend ::T::Private::Methods::SingletonMethodHooks
 end
 
 module Spoom::Sorbet::Sigils
@@ -25141,22 +25139,7 @@ module Spoom::Sorbet::Sigils
   VALID_STRICTNESS = ::T.let(nil, ::T.untyped)
 end
 
-module Spoom::Sorbet::Sigils
-  extend ::T::Private::Methods::MethodHooks
-  extend ::T::Private::Methods::SingletonMethodHooks
-end
-
 module Spoom::Sorbet
-  extend ::T::Private::Methods::SingletonMethodHooks
-end
-
-class Spoom::Timeline
-  extend ::T::Private::Methods::MethodHooks
-  extend ::T::Private::Methods::SingletonMethodHooks
-end
-
-module Spoom
-  extend ::T::Private::Methods::MethodHooks
   extend ::T::Private::Methods::SingletonMethodHooks
 end
 
@@ -25308,13 +25291,6 @@ end
 
 class Tapioca::Compilers::Dsl::Base
   SPECIAL_METHOD_NAMES = ::T.let(nil, ::T.untyped)
-end
-
-class Tapioca::Compilers::Dsl::Base
-  extend ::T::Private::Abstract::Hooks
-  extend ::T::InterfaceWrapper::Helpers
-  extend ::T::Private::Methods::MethodHooks
-  extend ::T::Private::Methods::SingletonMethodHooks
 end
 
 class Tempfile

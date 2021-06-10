@@ -137,3 +137,39 @@ module Hanami::Assets::Helpers
 end
 class Hanami::Assets::Error < StandardError
 end
+class Hanami::Assets::MissingAsset < Hanami::Assets::Error
+  def initialize(name, sources); end
+end
+class Hanami::Assets::UnknownAssetEngine < Hanami::Assets::Error
+  def initialize(source); end
+end
+class Hanami::Assets::Compiler
+  def absolute_destination_name; end
+  def cache!; end
+  def cache; end
+  def compile!; end
+  def compile; end
+  def compile?; end
+  def copy!; end
+  def dependencies; end
+  def destination; end
+  def destination_name; end
+  def destination_path; end
+  def exist?; end
+  def initialize(configuration, name); end
+  def load_paths; end
+  def modified?; end
+  def relative_destination_name(name: nil, add_prefix: nil); end
+  def renderer; end
+  def self.cache; end
+  def self.compile(configuration, name); end
+  def self.eligible?(_name); end
+  def self.fabricate(configuration, name); end
+  def self.inherited(subclass); end
+  def self.subclasses; end
+  def self.subclasses=(arg0); end
+  def source; end
+  def write; end
+  extend Hanami::Utils::ClassAttribute::ClassMethods
+  include Hanami::Utils::ClassAttribute
+end

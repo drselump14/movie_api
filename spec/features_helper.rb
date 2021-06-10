@@ -1,15 +1,16 @@
-# typed: false
+# typed: strict
 # frozen_string_literal: true
 
 # Require this file for feature tests
 require_relative "./spec_helper"
 
 require "capybara"
-require "capybara/rspec"
+require "capybara/dsl"
 
-RSpec.configure do |config|
-  config.include RSpec::FeatureExampleGroup
+Capybara.app = Hanami.app
 
-  config.include Capybara::DSL,           feature: true
-  config.include Capybara::RSpecMatchers, feature: true
+module MiniTest
+  class Spec
+    include Capybara::DSL
+  end
 end

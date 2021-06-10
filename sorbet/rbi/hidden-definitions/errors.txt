@@ -339,10 +339,6 @@
 # wrong constant name update
 # wrong constant name <static-init>
 # wrong constant name <static-init>
-# uninitialized constant BaseConfig::PARAM_NAME
-# uninitialized constant BaseConfig::RESERVED_NAMES
-# wrong constant name method_missing
-# wrong constant name respond_to_missing?
 # wrong constant name <Class:BasicObject>
 # wrong constant name <Class:Deprecation>
 # wrong constant name clone
@@ -2117,6 +2113,113 @@
 # wrong constant name w3c_click_offset
 # wrong constant name w3c_click_offset=
 # wrong constant name <static-init>
+# wrong constant name accept_alert
+# wrong constant name accept_confirm
+# wrong constant name accept_prompt
+# wrong constant name all
+# wrong constant name assert_all_of_selectors
+# wrong constant name assert_any_of_selectors
+# wrong constant name assert_current_path
+# wrong constant name assert_no_current_path
+# wrong constant name assert_no_selector
+# wrong constant name assert_no_text
+# wrong constant name assert_no_title
+# wrong constant name assert_none_of_selectors
+# wrong constant name assert_selector
+# wrong constant name assert_text
+# wrong constant name assert_title
+# wrong constant name attach_file
+# wrong constant name body
+# wrong constant name check
+# wrong constant name choose
+# wrong constant name click_button
+# wrong constant name click_link
+# wrong constant name click_link_or_button
+# wrong constant name click_on
+# wrong constant name current_host
+# wrong constant name current_path
+# wrong constant name current_scope
+# wrong constant name current_url
+# wrong constant name current_window
+# wrong constant name dismiss_confirm
+# wrong constant name dismiss_prompt
+# wrong constant name evaluate_script
+# wrong constant name execute_script
+# wrong constant name fill_in
+# wrong constant name find
+# wrong constant name find_all
+# wrong constant name find_button
+# wrong constant name find_by_id
+# wrong constant name find_field
+# wrong constant name find_link
+# wrong constant name first
+# wrong constant name go_back
+# wrong constant name go_forward
+# wrong constant name has_button?
+# wrong constant name has_checked_field?
+# wrong constant name has_content?
+# wrong constant name has_css?
+# wrong constant name has_current_path?
+# wrong constant name has_field?
+# wrong constant name has_link?
+# wrong constant name has_no_button?
+# wrong constant name has_no_checked_field?
+# wrong constant name has_no_content?
+# wrong constant name has_no_css?
+# wrong constant name has_no_current_path?
+# wrong constant name has_no_field?
+# wrong constant name has_no_link?
+# wrong constant name has_no_select?
+# wrong constant name has_no_selector?
+# wrong constant name has_no_table?
+# wrong constant name has_no_text?
+# wrong constant name has_no_title?
+# wrong constant name has_no_unchecked_field?
+# wrong constant name has_no_xpath?
+# wrong constant name has_select?
+# wrong constant name has_selector?
+# wrong constant name has_table?
+# wrong constant name has_text?
+# wrong constant name has_title?
+# wrong constant name has_unchecked_field?
+# wrong constant name has_xpath?
+# wrong constant name html
+# wrong constant name open_new_window
+# wrong constant name page
+# wrong constant name query
+# wrong constant name refresh
+# wrong constant name refute_selector
+# wrong constant name reset_session!
+# wrong constant name response_headers
+# wrong constant name save_and_open_page
+# wrong constant name save_and_open_screenshot
+# wrong constant name save_page
+# wrong constant name save_screenshot
+# wrong constant name scroll_by
+# wrong constant name scroll_to
+# wrong constant name select
+# wrong constant name send_keys
+# wrong constant name source
+# wrong constant name status_code
+# wrong constant name switch_to_frame
+# wrong constant name switch_to_window
+# wrong constant name text
+# wrong constant name title
+# wrong constant name uncheck
+# wrong constant name unselect
+# wrong constant name using_session
+# wrong constant name using_wait_time
+# wrong constant name visit
+# wrong constant name window_opened_by
+# wrong constant name windows
+# wrong constant name within
+# wrong constant name within_element
+# wrong constant name within_fieldset
+# wrong constant name within_frame
+# wrong constant name within_table
+# wrong constant name within_window
+# wrong constant name extended
+# wrong constant name included
 # wrong constant name <Class:Base>
 # wrong constant name <Class:Node>
 # wrong constant name accept_modal
@@ -3194,7 +3297,6 @@
 # wrong constant name threadsafe=
 # wrong constant name use_default_driver
 # wrong constant name using_driver
-# wrong constant name using_session
 # wrong constant name using_wait_time
 # wrong constant name visible_text_only
 # wrong constant name visible_text_only=
@@ -3935,6 +4037,9 @@
 # wrong constant name activated_gem_paths
 # uninitialized constant GetoptLong
 # uninitialized constant GetoptLong
+# uninitialized constant Hanami::Assets::Static::HEADER_RULES
+# uninitialized constant Hanami::Assets::Static::MAX_AGE
+# uninitialized constant Hanami::Assets::Static::URL_PREFIX
 # uninitialized constant Hanami::CommonLogger::FORMAT
 # uninitialized constant Hanami::Helpers::FormHelper::FormBuilder::CONTENT_TAGS
 # uninitialized constant Hanami::Helpers::FormHelper::FormBuilder::EMPTY_TAGS
@@ -3988,6 +4093,8 @@
 # uninitialized constant Hanami::Routing::Default::NullAction::RESPONSE_HEADERS
 # uninitialized constant Hanami::Routing::Default::NullAction::ROUTER_PARSED_BODY
 # uninitialized constant Hanami::Routing::Default::NullAction::X_CASCADE
+# uninitialized constant Hanami::Routing::Route::VALID_HTTP_VERBS
+# uninitialized constant Hanami::Routing::Route::VALID_HTTP_VERBS_WITHOUT_GET
 # uninitialized constant Hanami::Utils::PathPrefix::CAPITALIZE_SEPARATOR
 # uninitialized constant Hanami::Utils::PathPrefix::CLASSIFY_SEPARATOR
 # Did you mean?  Hanami::Utils::PathPrefix::CLASSIFY_WORD_SEPARATOR
@@ -4775,7 +4882,6 @@
 # wrong constant name ial_for_element
 # wrong constant name inner
 # wrong constant name parse_title
-# wrong constant name <static-init>
 # uninitialized constant Kramdown::Converter::Latex::SMART_QUOTE_INDICES
 # wrong constant name attribute_list
 # wrong constant name convert

@@ -399,3 +399,26 @@ class Hanami::Welcome
   def call(env); end
   def initialize(_app); end
 end
+class Hanami::Static < Rack::Static
+  def _urls(root); end
+  def initialize(app, root: nil, header_rules: nil); end
+end
+module Hanami::Assets
+end
+class Hanami::Assets::Asset
+  def config; end
+  def exist?; end
+  def find_asset; end
+  def initialize(sources, path); end
+  def original; end
+  def path; end
+  def precompile?; end
+end
+class Hanami::Assets::Static < Hanami::Static
+  def _sources_from_applications; end
+  def call(env); end
+  def initialize(app); end
+  def precompile(asset); end
+  def serve(env, asset); end
+  def serve?(asset); end
+end

@@ -105,6 +105,7 @@ module Capybara
   def self.visible_text_only=(*args, &block); end
   def self.w3c_click_offset(*args, &block); end
   def self.w3c_click_offset=(*args, &block); end
+  extend Capybara::DSL
 end
 class Capybara::SessionConfig
   def always_include_port; end
@@ -1643,4 +1644,113 @@ end
 class Capybara::ReadOnlyElementError < Capybara::CapybaraError
 end
 module Capybara::RackTest
+end
+module Capybara::DSL
+  def accept_alert(**, &&); end
+  def accept_confirm(**, &&); end
+  def accept_prompt(**, &&); end
+  def all(**, &&); end
+  def assert_all_of_selectors(**, &&); end
+  def assert_any_of_selectors(**, &&); end
+  def assert_current_path(**, &&); end
+  def assert_no_current_path(**, &&); end
+  def assert_no_selector(**, &&); end
+  def assert_no_text(**, &&); end
+  def assert_no_title(**, &&); end
+  def assert_none_of_selectors(**, &&); end
+  def assert_selector(**, &&); end
+  def assert_text(**, &&); end
+  def assert_title(**, &&); end
+  def attach_file(**, &&); end
+  def body(**, &&); end
+  def check(**, &&); end
+  def choose(**, &&); end
+  def click_button(**, &&); end
+  def click_link(**, &&); end
+  def click_link_or_button(**, &&); end
+  def click_on(**, &&); end
+  def current_host(**, &&); end
+  def current_path(**, &&); end
+  def current_scope(**, &&); end
+  def current_url(**, &&); end
+  def current_window(**, &&); end
+  def dismiss_confirm(**, &&); end
+  def dismiss_prompt(**, &&); end
+  def evaluate_script(**, &&); end
+  def execute_script(**, &&); end
+  def fill_in(**, &&); end
+  def find(**, &&); end
+  def find_all(**, &&); end
+  def find_button(**, &&); end
+  def find_by_id(**, &&); end
+  def find_field(**, &&); end
+  def find_link(**, &&); end
+  def first(**, &&); end
+  def go_back(**, &&); end
+  def go_forward(**, &&); end
+  def has_button?(**, &&); end
+  def has_checked_field?(**, &&); end
+  def has_content?(**, &&); end
+  def has_css?(**, &&); end
+  def has_current_path?(**, &&); end
+  def has_field?(**, &&); end
+  def has_link?(**, &&); end
+  def has_no_button?(**, &&); end
+  def has_no_checked_field?(**, &&); end
+  def has_no_content?(**, &&); end
+  def has_no_css?(**, &&); end
+  def has_no_current_path?(**, &&); end
+  def has_no_field?(**, &&); end
+  def has_no_link?(**, &&); end
+  def has_no_select?(**, &&); end
+  def has_no_selector?(**, &&); end
+  def has_no_table?(**, &&); end
+  def has_no_text?(**, &&); end
+  def has_no_title?(**, &&); end
+  def has_no_unchecked_field?(**, &&); end
+  def has_no_xpath?(**, &&); end
+  def has_select?(**, &&); end
+  def has_selector?(**, &&); end
+  def has_table?(**, &&); end
+  def has_text?(**, &&); end
+  def has_title?(**, &&); end
+  def has_unchecked_field?(**, &&); end
+  def has_xpath?(**, &&); end
+  def html(**, &&); end
+  def open_new_window(**, &&); end
+  def page; end
+  def query(**, &&); end
+  def refresh(**, &&); end
+  def refute_selector(**, &&); end
+  def reset_session!(**, &&); end
+  def response_headers(**, &&); end
+  def save_and_open_page(**, &&); end
+  def save_and_open_screenshot(**, &&); end
+  def save_page(**, &&); end
+  def save_screenshot(**, &&); end
+  def scroll_by(**, &&); end
+  def scroll_to(**, &&); end
+  def select(**, &&); end
+  def self.extended(base); end
+  def self.included(base); end
+  def send_keys(**, &&); end
+  def source(**, &&); end
+  def status_code(**, &&); end
+  def switch_to_frame(**, &&); end
+  def switch_to_window(**, &&); end
+  def text(**, &&); end
+  def title(**, &&); end
+  def uncheck(**, &&); end
+  def unselect(**, &&); end
+  def using_session(name_or_session, &block); end
+  def using_wait_time(seconds, &block); end
+  def visit(**, &&); end
+  def window_opened_by(**, &&); end
+  def windows(**, &&); end
+  def within(**, &&); end
+  def within_element(**, &&); end
+  def within_fieldset(**, &&); end
+  def within_frame(**, &&); end
+  def within_table(**, &&); end
+  def within_window(**, &&); end
 end

@@ -9,8 +9,6 @@ module ::Anonymous_Delegator_123; end
 module ::Anonymous_Delegator_3; end
 module ::Anonymous_Delegator_37; end
 module ActiveSupport::StringInquirer; end
-module Capybara::DSL; end
-module Capybara::RSpecMatchers; end
 module Kramdown::Converter::Kramdown::Utils::Configurable; end
 module T::InterfaceWrapper::Helpers; end
 module T::Private::Abstract::Hooks; end
