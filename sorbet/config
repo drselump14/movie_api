@@ -1,3 +1,6 @@
 --dir
 .
 --ignore=/vendor/bundle
+--ignore=sorbet/rbi/gems/rb-readline@0.5.5.rbi
+--ignore=sorbet/rbi/gems/sorbet-rails@0.7.4.rbi
+--suppress-error-code=4002,4010,5005,7002,7019
