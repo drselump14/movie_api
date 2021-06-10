@@ -1,0 +1,41 @@
+require:
+  - rubocop-sequel
+  - rubocop-sorbet
+
+inherit_gem:
+  rubocop-github:
+    - config/default_edge.yml
+    - config/rails_edge.yml
+
+Metrics/CyclomaticComplexity:
+  Max: 9
+
+# Offense count: 2
+# Configuration parameters: CountComments, CountAsOne, ExcludedMethods, IgnoredMethods.
+Metrics/MethodLength:
+  Max: 12
+
+# Offense count: 1
+# Configuration parameters: IgnoredMethods.
+Metrics/PerceivedComplexity:
+  Max: 9
+
+Style/Documentation:
+  Enabled: false
+
+Layout/LineLength:
+  Max: 120
+
+Sorbet/FalseSigil:
+  Enabled: false
+
+Sorbet/ValidSigil:
+  Enabled: false
+
+AllCops:
+  NewCops: enable
+  Exclude:
+    - 'db/**/*'
+    - 'bin/{rake,bundle}'
+    - 'vendor/bundle/**/*'
+    - 'Rakefile'

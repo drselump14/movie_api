@@ -1,0 +1,3 @@
+project=movie_api
+test=rspec
+template=erb
