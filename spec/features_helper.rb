@@ -1,14 +1,12 @@
-# typed: strict
-# frozen_string_literal: true
-
 # Require this file for feature tests
-require_relative "./spec_helper"
-require "factory_bot"
+require_relative './spec_helper'
 
-module Minitest
-  class Unit
-    class TestCase
-      include FactoryBot::Syntax::Methods
-    end
-  end
+require 'capybara'
+require 'capybara/rspec'
+
+RSpec.configure do |config|
+  config.include RSpec::FeatureExampleGroup
+
+  config.include Capybara::DSL,           feature: true
+  config.include Capybara::RSpecMatchers, feature: true
 end
