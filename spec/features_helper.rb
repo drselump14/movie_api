@@ -3,14 +3,12 @@
 
 # Require this file for feature tests
 require_relative "./spec_helper"
+require "factory_bot"
 
-require "capybara"
-require "capybara/dsl"
-
-Capybara.app = Hanami.app
-
-module MiniTest
-  class Spec
-    include Capybara::DSL
+module Minitest
+  class Unit
+    class TestCase
+      include FactoryBot::Syntax::Methods
+    end
   end
 end

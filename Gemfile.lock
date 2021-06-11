@@ -34,6 +34,10 @@ GEM
     commander (4.6.0)
       highline (~> 2.0.0)
     concurrent-ruby (1.1.9)
+    database_cleaner-core (2.0.1)
+    database_cleaner-sequel (2.0.0)
+      database_cleaner-core (~> 2.0.0)
+      sequel
     debug_inspector (1.1.0)
     declarative (0.0.20)
     declarative-builder (0.2.0)
@@ -94,6 +98,8 @@ GEM
       dry-types (~> 0.11.0)
     e2mmap (0.1.0)
     erubi (1.10.0)
+    factory_bot (6.2.0)
+      activesupport (>= 5.0.0)
     hanami (1.3.4)
       bundler (>= 1.6, < 3)
       concurrent-ruby (~> 1.0)
@@ -351,10 +357,12 @@ PLATFORMS
 DEPENDENCIES
   anyway_config
   capybara
+  database_cleaner-sequel
   dotenv (~> 2.4)
   dry-auto_inject
   dry-container
   dry-system
+  factory_bot
   hanami (~> 1.3)
   hanami-model (~> 1.3)
   hanami-webconsole
@@ -367,8 +375,6 @@ DEPENDENCIES
   pry-stack_explorer
   rake
   rb-readline
-  rom-repository
-  rom-sql
   rubocop
   rubocop-github (>= 0.16.0)
   rubocop-minitest

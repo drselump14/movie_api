@@ -12,6 +12,7 @@ gem "anyway_config"
 gem "dry-auto_inject"
 gem "dry-container"
 gem "dry-system"
+gem "factory_bot"
 gem "sorbet-coerce"
 gem "sorbet-runtime"
 gem "trailblazer"
@@ -35,6 +36,7 @@ end
 
 group :test do
   gem "capybara"
+  gem "database_cleaner-sequel"
   gem "minitest"
 end
 

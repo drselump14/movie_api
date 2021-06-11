@@ -32,6 +32,9 @@ Sorbet/FalseSigil:
 Sorbet/ValidSigil:
   Enabled: false
 
+Sorbet/ForbidRBIOutsideOfSorbetDir:
+  Enabled: false
+
 AllCops:
   NewCops: enable
   Exclude:
