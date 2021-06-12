@@ -7,5 +7,6 @@
 # Example:
 # get '/hello', to: ->(env) { [200, {}, ['Hello from Hanami!']] }
 
-get "/favorites"
-get "/movies", to: "movies#index"
+get "/favorites", to: "favorites#index"
+post "/favorites/:id", to: "favorites#create"
+resources :movies, only: %i[index show]

@@ -265,6 +265,9 @@ GEM
       rubocop (>= 0.87.0)
     rubocop-rake (0.5.1)
       rubocop
+    rubocop-rspec (2.4.0)
+      rubocop (~> 1.0)
+      rubocop-ast (>= 1.1.0)
     rubocop-sequel (0.2.0)
       rubocop (~> 1.0)
     rubocop-sorbet (0.6.2)
@@ -378,6 +381,7 @@ DEPENDENCIES
   rubocop-minitest
   rubocop-performance
   rubocop-rake
+  rubocop-rspec
   rubocop-sequel
   rubocop-sorbet
   shotgun

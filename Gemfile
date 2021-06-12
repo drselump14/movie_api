@@ -46,6 +46,7 @@ group :tools do
   gem "rubocop-minitest", require: false
   gem "rubocop-performance", require: false
   gem "rubocop-rake", require: false
+  gem "rubocop-rspec", require: false
   gem "rubocop-sequel", require: false
   gem "rubocop-sorbet", require: false
   gem "solargraph", require: false

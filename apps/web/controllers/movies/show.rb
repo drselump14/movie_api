@@ -4,7 +4,7 @@
 module Web
   module Controllers
     module Movies
-      class Index
+      class Show
         extend T::Sig
         include Web::Action
 
@@ -12,8 +12,11 @@ module Web
           @movie_repository = movie_repository
         end
 
-        def call(_params)
-          self.body = @movie_repository.all.map(&:to_h).to_json
+        def call(params)
+          self.body = @movie_repository
+                      .find(params[:id])
+                      .to_h
+                      .to_json
         end
       end
     end

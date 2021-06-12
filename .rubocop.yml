@@ -41,4 +41,5 @@ AllCops:
     - 'db/**/*'
     - 'bin/{rake,bundle}'
     - 'vendor/bundle/**/*'
+    - 'sorbet/**/*'
     - 'Rakefile'
