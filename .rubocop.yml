@@ -37,9 +37,11 @@ Sorbet/ForbidRBIOutsideOfSorbetDir:
 
 AllCops:
   NewCops: enable
+  TargetRubyVersion: 2.7
   Exclude:
     - 'db/**/*'
     - 'bin/{rake,bundle}'
     - 'vendor/bundle/**/*'
     - 'sorbet/**/*'
     - 'Rakefile'
+    - 'spec/spec_helper.rb'

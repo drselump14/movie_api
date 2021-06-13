@@ -4,6 +4,7 @@
 require "bundler/setup"
 require "hanami/setup"
 require "hanami/model"
+require "active_support/core_ext/object/blank"
 require_relative "../lib/movie_api"
 require_relative "../apps/web/application"
 

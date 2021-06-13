@@ -2,7 +2,7 @@
 
 require "spec_helper"
 
-RSpec.describe Web::Controllers::Movies::Show do
+RSpec.describe Web::Controllers::Favorites::Create do
   include_context "setup_user_token"
   let(:action) { described_class.new }
   let(:movie_repository) { MovieRepository.new }
@@ -11,14 +11,19 @@ RSpec.describe Web::Controllers::Movies::Show do
   let(:action) { described_class.new }
   let(:params) do
     {
-      id: movie.id
+      movie_id: movie.id
     }
   end
   subject(:response) { action.call(params.merge(headers)) }
 
   it "is successful" do
     expect(response[0]).to be(200)
-    expect(response[2][0]).to eq movie.to_h.to_json
+  end
+
+  context "when user already favorite the movie" do
+    let!(:favorite) { FavoriteRepository.new.create(user_id: user.id, movie_id: movie.id) }
+
+    it { expect(response[0]).to be(400) }
   end
 
   it_behaves_like "unauthorized_response"

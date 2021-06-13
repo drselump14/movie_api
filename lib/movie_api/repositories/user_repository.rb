@@ -8,4 +8,10 @@ class UserRepository < Hanami::Repository
     has_many :favorites
     has_many :movies, through: :favorites
   end
+
+  sig { params(user_id: Integer).returns(String) }
+  def generate_jwt(user_id)
+    payload = { user_id: user_id }
+    JWT.encode(payload, nil, "none")
+  end
 end

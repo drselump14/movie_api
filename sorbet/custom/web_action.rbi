@@ -4,5 +4,6 @@
 module Web
   module Action
     def body=(body); end
+    def self.handle_exception(args); end
   end
 end

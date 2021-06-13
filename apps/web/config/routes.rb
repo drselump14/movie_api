@@ -8,5 +8,5 @@
 # get '/hello', to: ->(env) { [200, {}, ['Hello from Hanami!']] }
 
 get "/favorites", to: "favorites#index"
-post "/favorites/:id", to: "favorites#create"
+post "/favorites/:movie_id", to: "favorites#create"
 resources :movies, only: %i[index show]
