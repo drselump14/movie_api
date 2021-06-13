@@ -24,7 +24,6 @@ module Web
       #
       load_paths << %w[
         controllers
-        views
       ]
 
       # Handle exceptions with HTTP statuses (true) or don't catch them (false).
@@ -107,11 +106,11 @@ module Web
 
       # The layout to be used by all views
       #
-      layout :application # It will load Web::Views::ApplicationLayout
+      # layout :application # It will load Web::Views::ApplicationLayout
 
       # The relative path to templates
       #
-      templates "templates"
+      # templates "templates"
 
       ##
       # ASSETS

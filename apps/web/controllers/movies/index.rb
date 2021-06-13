@@ -12,8 +12,9 @@ module Web
           @movie_repository = movie_repository
         end
 
-        def call(_params)
-          self.body = @movie_repository.all.map(&:to_h).to_json
+        def call(params)
+          movies = params[:search] ? @movie_repository.search_title(params[:search]) : @movie_repository.all
+          self.body = movies.map(&:to_h).to_json
         end
       end
     end

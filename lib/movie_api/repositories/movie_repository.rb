@@ -16,4 +16,9 @@ class MovieRepository < Hanami::Repository
       .where(users[:id].qualified => user_id)
       .to_a
   end
+
+  sig { params(query: String).returns(T::Array[Movie]) }
+  def search_title(query)
+    movies.where { title.ilike("%?%", query) }.to_a
+  end
 end
