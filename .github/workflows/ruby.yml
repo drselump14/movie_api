@@ -1,0 +1,55 @@
+name: Ruby
+
+on: [push]
+
+env:
+  HANAMI_ENV: test
+  DATABASE_URL: "postgresql://postgres@localhost/movie_api_test"
+jobs:
+  build:
+    if: true
+
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:11.5
+        env:
+          POSTGRES_DB: movie_api_test
+        ports: ["5432:5432"]
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: Set up Ruby 2.7
+        uses: actions/setup-ruby@v1
+        with:
+          ruby-version: 2.7.x
+      - name: Install Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get -yqq install libpq-dev libcurl4-openssl-dev
+      - name: cache gems
+        id: cache-gems
+        uses: actions/cache@v1
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}--${{ hashFiles('Gemfile.lock') }}
+      - name: bundle install
+        run: |
+          gem install bundler
+          bundle install --jobs 4 --retry 3 --path=vendor/bundle --without production
+      - name: load db
+        run: |
+          bundle exec hanami db prepare
+      - name: run rspec
+        run: |
+          bundle exec rspec \
+                --profile \
+                -- spec/
+      - name: Archive code coverage results
+        uses: actions/upload-artifact@v2
+        with:
+          name: code-coverage-report
+          path: tmp/test/code-coverage.html
+
