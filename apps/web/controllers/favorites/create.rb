@@ -16,8 +16,9 @@ module Web
         def call(params)
           @favorite_repository.create(user_id: current_user.id, movie_id: params[:movie_id])
           self.body = "OK"
+        rescue Hanami::Model::ForeignKeyConstraintViolationError => e
+          halt 400, "Movie not found"
         rescue Hanami::Model::UniqueConstraintViolationError => e
-          puts e.message
           halt 400, "Movie already registered as favorite"
         end
       end
