@@ -1,33 +1,43 @@
 # Movie Api
 
-Welcome to your new Hanami project!
-
 ## Setup
 
-How to run tests:
-
-```
-% bundle exec rake
-```
-
-How to run the development console:
-
-```
-% bundle exec hanami console
+```ruby
+bundle install # Install dependency
+bundle exec hanami db prepare # Prepare ( create and migrate ) DB for development environment
+bundle exec rake db:seed # Seed predefined data
+bundle exec hanami server # Run the server
 ```
 
-How to run the development server:
+Or using docker
 
 ```
-% bundle exec hanami server
+docker compose up
 ```
 
-How to prepare (create and migrate) DB for `development` and `test` environments:
+The API will be available from localhost:2300.
+You need to set the authorization header with `Bearer eyJhbGciOiJub25lIn0.eyJ1c2VyX2lkIjoxfQ.` (predefined user api key [JWT format]) to access the API.
 
+Available APIs and example using [httpie](https://httpie.io) :
+
+- Get the movies list: `/movies`
+```bash
+http http://127.0.0.1:2300/movies 'Authorization:Bearer eyJhbGciOiJub25lIn0.eyJ1c2VyX2lkIjoxfQ.'
 ```
-% bundle exec hanami db prepare
 
-% HANAMI_ENV=test bundle exec hanami db prepare
+- Search movies by title: `/movies?search={keyword}`
+```bash
+http http://127.0.0.1:2300/movies\?search\=black 'Authorization:Bearer eyJhbGciOiJub25lIn0.eyJ1c2VyX2lkIjoxfQ.'
 ```
 
-Explore Hanami [guides](https://guides.hanamirb.org/), [API docs](http://docs.hanamirb.org/1.3.4/), or jump in [chat](http://chat.hanamirb.org) for help. Enjoy! 🌸
+- Add movie as favorite: `/favorites/:movie_id`
+```bash
+http POST http://localhost:2300/favorites/1 'Authorization:Bearer eyJhbGciOiJub25lIn0.eyJ1c2VyX2lkIjoxfQ.'
+```
+It returns 200 status when it successfully add the movies favorites.
+It returns 400 status when movie already added to favorites.
+
+- Get the favorited movies list: `/favorites`
+```bash
+http http://localhost:2300/favorites 'Authorization:Bearer eyJhbGciOiJub25lIn0.eyJ1c2VyX2lkIjoxfQ.'
+```
