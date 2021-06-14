@@ -9,9 +9,10 @@ RSpec.describe Web::Controllers::Favorites::Create do
   let(:movie_title) { Faker::Movie.title }
   let!(:movie) { movie_repository.create(title: movie_title) }
   let(:action) { described_class.new }
+  let(:movie_id) { movie.id }
   let(:params) do
     {
-      movie_id: movie.id
+      movie_id: movie_id
     }
   end
   subject(:response) { action.call(params.merge(headers)) }
@@ -23,6 +24,11 @@ RSpec.describe Web::Controllers::Favorites::Create do
   context "when user already favorite the movie" do
     let!(:favorite) { FavoriteRepository.new.create(user_id: user.id, movie_id: movie.id) }
 
+    it { expect(response[0]).to be(400) }
+  end
+
+  context "when movie id not found" do
+    let(:movie_id) { 0 }
     it { expect(response[0]).to be(400) }
   end
 
