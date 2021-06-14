@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 shared_examples "unauthorized_response" do
   include_context "setup_user_token"
   subject(:response) { action.call(params.merge(headers)) }

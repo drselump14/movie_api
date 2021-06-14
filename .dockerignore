@@ -1,0 +1,28 @@
+## Environment normalisation:
+.bundle
+vendor/bundle
+node_modules
+
+**/.git
+**/node_modules
+
+/public/packs
+/public/packs-test
+/public/assets
+
+**/.terraform
+*.tfvars
+
+tmp
+log
+
+config/database.yml
+
+.bundle/config
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+.git
+.gitignore
+.env.development
+.env.test

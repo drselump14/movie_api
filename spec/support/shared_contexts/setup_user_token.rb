@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 shared_context "setup_user_token" do
   let(:user_repository) { UserRepository.new }
   let(:user) { user_repository.create(name: "User1") }

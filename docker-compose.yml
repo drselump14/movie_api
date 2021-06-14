@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  api:
+    depends_on:
+      - db
+    ports:
+      - "2300:2300"
+    command: ["sh","scripts/start_server.sh"]
+    environment:
+      - RAILS_ENV=development
+      - DOCKER_LOGS=true
+      - DISABLE_DATABASE_ENVIRONMENT_CHECK=1
+      - DATABASE_URL=postgresql://root@db/movie_api_development
+    tty: true
+    stdin_open: true
+    build:
+      context: .
+      target: build-gem-env
+      args:
+        - RAILS_ENV=development
+    volumes:
+      - $PWD:/app
+
+  db:
+    image: postgres
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_HOST_AUTH_METHOD: trust
+      POSTGRES_INITDB_ARGS: "--encoding=UTF-8"
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data
+
+volumes:
+  bundle:

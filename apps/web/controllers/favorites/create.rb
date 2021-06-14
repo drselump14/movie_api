@@ -18,7 +18,7 @@ module Web
           self.body = "OK"
         rescue Hanami::Model::UniqueConstraintViolationError => e
           puts e.message
-          halt 400, "Movie already registered"
+          halt 400, "Movie already registered as favorite"
         end
       end
     end
